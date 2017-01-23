@@ -7,6 +7,7 @@ var app = express();
 //   res.send('Hello world')
 // })
 
+app.use(express.static(__dirname + '/../client'))
 app.listen(process.env.port || 8000, function() {
   console.log('listening on port 8000')
 });
