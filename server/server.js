@@ -7,6 +7,6 @@ app.get('/', function(req, res) {
   res.send('Hello world')
 })
 
-app.listen(8000, function() {
+app.listen(process.env.port || 8000, function() {
   console.log('listening on port 8000')
 });
