@@ -9,6 +9,8 @@
   <body ng-app="mathApp">
     <h1>MathCraft</h1>
     <div ng-controller="MathController">
+      <input type="text" ng-model="response"/>
+      <button ng-click="random()">submit</button>
       <pre>
         {{message}}
       </pre>
