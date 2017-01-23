@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var mongoose = requre('mongoose');
+var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/mathcraft')
 

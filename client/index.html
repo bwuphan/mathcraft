@@ -4,13 +4,16 @@
     <meta charset="utf-8" />
     <title>MathCraft</title>
     <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script src="./app.js"></script>
   </head>
-  <body ng-app>
+  <body ng-app="mathApp">
     <h1>MathCraft</h1>
-
+    <div ng-controller="MathController">
+      <pre>
+        {{message}}
+      </pre>
+    </div>
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-
-    <script src="lib/angular/angular.js"></script>
 <!--     LOAD IN FILE HERE -->
   </body>
 </html>
