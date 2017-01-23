@@ -6,8 +6,8 @@ var app = express();
 //   console.log('hello')
 //   res.send('Hello world')
 // })
-
-app.use(express.static(__dirname + '/../client'))
-app.listen(process.env.port || 8000, function() {
-  console.log('listening on port 8000')
+var port = process.env.port || 8000
+app.use(express.static(__dirname + '/../client'));
+app.listen(port, function() {
+  console.log('listening on port', port)
 });
