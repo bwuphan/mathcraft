@@ -1,6 +1,6 @@
 angular.module('mathApp',[])
 .controller('MathController', function($scope, $location) {
-  $scope.usrAnswer = '';
+  // $scope.usrAnswer = '';
 
   //Generates random operator
   // $scope.randomOp = function() {
