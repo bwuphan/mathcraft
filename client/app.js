@@ -2,7 +2,7 @@ angular.module('mathApp',[])
 .controller('MathController', function($scope, $location) {
   $scope.usrAnswer = '';
 
-  Generates random operator
+  // Generates random operator
   $scope.randomOp = function() {
     var randNum = Math.random();
     if(randNum > .5) {
