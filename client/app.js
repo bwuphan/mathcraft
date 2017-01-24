@@ -53,7 +53,9 @@ angular.module('mathApp',[])
       if(entry.highscore){
         return entry;
       }
-    })
+    }).sort(function(a, b){
+      return parseFloat(b.highscore) - parseFloat(a.highscore);
+    });
   }
 
   $http({
