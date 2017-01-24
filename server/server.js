@@ -15,7 +15,7 @@ db.once('open', function() {
 
 app.post('/', userController.signin);
 
-// app.get('/', userController.getUsers);
+app.get('/scores', userController.getUsers);
 
 // app.get('/', function(req, res) {
 //   console.log('hello')

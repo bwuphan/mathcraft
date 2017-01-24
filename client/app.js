@@ -1,16 +1,20 @@
 angular.module('mathApp',[])
 .controller('MathController', function($scope, $location, $http, $timeout) {
   $scope.usrAnswer = '';
-  $scope.time = 10;
+  $scope.time = 60;
   $scope.score = 0;
   $scope.start = false;
   $scope.data = '';
   $http({
     method:'GET',
-    url: '/'
+    url: '/scores'
   })
   .then(function(resp){
-    $scope.data = resp.data;
+    $scope.data = resp.data.sort(function(a, b){
+      return parseFloat(b.highscore) - parseFloat(a.highscore);
+    }).map(function(object) {
+      return {highscore : object.highscore, username : object.username};
+    })
   })
   //Timer function
   $scope.timerStart = function() {
