@@ -7,23 +7,20 @@
     <script src="./app.js"></script>
   </head>
   <body ng-app="mathApp">
-    <h1>MathCraft</h1>
-    <div ng-controller="MathController">
-      <button ng-show="start===false" ng-click="timerStart()">START</button>
+    <h1 align="center" >MathCraft</h1>
+    <div align="center" ng-controller="MathController">
+      <form name="entry">
+        <div ng-show="entry.username.$error.required">Please Enter Name</div>
+        <input name="username" placeholder="Enter Name Here" ng-model="username" " required/>
+        <button ng-disabled="entry.username.$invalid" ng-show="start===false" ng-click="timerStart()">START</button>
+      </form>
       <h1>Score : {{score}}</h1>
+
+      <div ng-repeat="datum in data">{{datum.username}}  <div align="center">{{datum.highscore}}</div></div>
       <div ng-show="start">
         <h2>{{expression}}</h2>
         <input autofocus type="text" ng-model="usrAnswer"/>
         <button ng-click="random()">submit</button>
-        <pre>
-          <h2>{{usrAnswer}}</h2>
-          {{expression}}
-          {{check}}
-          {{time}}
-          {{score}}
-          {{start}}
-          {{data}}
-        </pre>
       </div>
     </div>
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
