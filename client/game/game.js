@@ -1,7 +1,8 @@
-angular.module('mathApp',[])
-.controller('MathController', function($scope, $location, $timeout) {
+console.log('hello')
+angular.module('mathcraft.game',[])
+.controller('GameController', function($scope, $location, $timeout) {
   $scope.usrAnswer = '';
-  $scope.time = 60;
+  $scope.time = 3;
   $scope.score = 0;
   $scope.start = false;
 
@@ -12,11 +13,8 @@ angular.module('mathApp',[])
       $scope.time--;
       if($scope.time < 1) {
         $scope.start = false;
-<<<<<<< HEAD
-=======
         console.log('in here');
         $location.path('/#/');
->>>>>>> 38e6006d7a65df5ff476aea2bd834bfbdab86c4a
       }
       $timeout(decTime, 1000);
     }
