@@ -4,30 +4,22 @@ angular.module('mathApp',[])
   $scope.time = 60;
   $scope.score = 0;
   $scope.start = false;
-  $scope.data = '';
+  $scope.data1;
+  $scope.data2;
   $scope.username = '';
+  $scope.selectedMode = '';
 
-  var ajaxRequests = function() {
-    console.log($scope.username)
-    $http({
-      method: 'POST',
-      url: '/',
-      data: JSON.stringify({username: $scope.username, highscore: $scope.score})
-    })
-    .then(function(){
-      $http({
-        method:'GET',
-        url: '/scores'
-      })
-      .then(function(resp){
-        $scope.data = resp.data.sort(function(a, b){
-          return parseFloat(b.highscore) - parseFloat(a.highscore);
-        }).map(function(object) {
-          return {highscore : object.highscore, username : object.username};
-        })
-      })
-    })
-  };
+  //modes for game
+  var modes = {
+    one: {
+      time: 60
+    },
+    two: {
+      time: 30
+    }
+  }
+
+  $scope.modes = ['one', 'two'];
 
 
   $http({
@@ -35,15 +27,21 @@ angular.module('mathApp',[])
     url: '/scores'
   })
   .then(function(resp){
-    $scope.data = resp.data.sort(function(a, b){
+    $scope.data1 = resp.data.sort(function(a, b){
       return parseFloat(b.highscore) - parseFloat(a.highscore);
-    }).map(function(object) {
-      return {highscore : object.highscore, username : object.username};
-    })
-  })
+    }).filter(function(entry) {
+      if(entry.mode === 'one'){
+        return entry;
+      }
+    }).map(function(entry) {
+      return {highscore : entry.highscore, username : entry.username};
+    });
+
+  });
 
   //Timer function
   $scope.timerStart = function() {
+    $scope.time = modes[$scope.selectedMode].time;
     //inner function decrements time
     var decTime = function() {
       $scope.time--;
@@ -52,7 +50,7 @@ angular.module('mathApp',[])
         $http({
           method: 'POST',
           url: '/',
-          data: JSON.stringify({username: $scope.username, highscore: $scope.score})
+          data: JSON.stringify({username: $scope.username, highscore: $scope.score, mode: $scope.selectedMode})
         })
         return;
       }
@@ -94,5 +92,26 @@ angular.module('mathApp',[])
     $scope.usrAnswer = '';
   }
 
+  // var ajaxRequests = function() {
+  //   console.log($scope.username)
+  //   $http({
+  //     method: 'POST',
+  //     url: '/',
+  //     data: JSON.stringify({username: $scope.username, highscore: $scope.score})
+  //   })
+  //   .then(function(){
+  //     $http({
+  //       method:'GET',
+  //       url: '/scores'
+  //     })
+  //     .then(function(resp){
+  //       $scope.data = resp.data.sort(function(a, b){
+  //         return parseFloat(b.highscore) - parseFloat(a.highscore);
+  //       }).map(function(object) {
+  //         return {highscore : object.highscore, username : object.username};
+  //       })
+  //     })
+  //   })
+  // };
 
 });
