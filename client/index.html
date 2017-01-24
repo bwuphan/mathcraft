@@ -24,46 +24,46 @@
         <button ng-click="random()">submit</button>
       </div>
       <div ng-show="start===false" class="scoreboard">
-          <table class="basic60">
-            <caption>Basic 60</caption>
-            <tr>
-              <th>User</th>
-              <th>Score</th>
-            </tr>
-            <tr ng-repeat="score in scoresBasic60">
-              <th>{{score.username}}</th>
-              <th>{{score.highscore}}</th>
-          </table>
-          <table class="basic30">
-            <caption>Basic 30</caption>
-            <tr>
-              <th>User</th>
-              <th>Score</th>
-            </tr>
-            <tr ng-repeat="score in scoresBasic30">
-              <th>{{score.username}}</th>
-              <th>{{score.highscore}}</th>
-          </table>
-          <table class="advanced60">
-            <caption>Advanced 60</caption>
-            <tr>
-              <th>User</th>
-              <th>Score</th>
-            </tr>
-            <tr ng-repeat="score in scoresAdvanced60">
-              <th>{{score.username}}</th>
-              <th>{{score.highscore}}</th>
-          </table>
-          <table class="advanced30">
-            <caption>Advanced 30</caption>
-            <tr>
-              <th>User</th>
-              <th>Score</th>
-            </tr>
-            <tr ng-repeat="score in scoresAdvanced30">
-              <th>{{score.username}}</th>
-              <th>{{score.highscore}}</th>
-          </table>
+        <table class="basic60">
+          <caption>Basic 60</caption>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+          <tr ng-repeat="score in scoresBasic60">
+            <th>{{score.username}}</th>
+            <th>{{score.highscore}}</th>
+        </table>
+        <table class="basic30">
+          <caption>Basic 30</caption>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+          <tr ng-repeat="score in scoresBasic30">
+            <th>{{score.username}}</th>
+            <th>{{score.highscore}}</th>
+        </table>
+        <table class="advanced60">
+          <caption>Advanced 60</caption>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+          <tr ng-repeat="score in scoresAdvanced60">
+            <th>{{score.username}}</th>
+            <th>{{score.highscore}}</th>
+        </table>
+        <table class="advanced30">
+          <caption>Advanced 30</caption>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+          <tr ng-repeat="score in scoresAdvanced30">
+            <th>{{score.username}}</th>
+            <th>{{score.highscore}}</th>
+        </table>
       </div>
     </div>
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->

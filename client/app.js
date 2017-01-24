@@ -34,16 +34,26 @@ angular.module('mathApp',[])
 
   //This function filters the data by mode and sorts by high score
   var filterMode = function(data, modeString) {
-    return data.sort(function(a, b){
-      return parseFloat(b.highscore) - parseFloat(a.highscore);
+    // return data.sort(function(a, b){
+    //   return parseFloat(b.highscore) - parseFloat(a.highscore);
+    // }).filter(function(entry) {
+    //   if(entry.mode === modeString){
+    //     console.log('mode here ' + entry.mode + ' ' + modeString);
+    //     return entry;
+    //   }
+    // }).map(function(entry) {
+    //   return {highscore : entry.highscore, username : entry.username};
+    // });
+    return data.map(function(entry) {
+      if(entry.username === 'billG'){
+        console.log(JSON.stringify(entry))
+      }
+      return {username: entry.username, highscore: entry[modeString]};
     }).filter(function(entry) {
-      if(entry.mode === modeString){
-        console.log('mode here ' + entry.mode + ' ' + modeString);
+      if(entry.highscore){
         return entry;
       }
-    }).map(function(entry) {
-      return {highscore : entry.highscore, username : entry.username};
-    });
+    })
   }
 
   $http({
@@ -51,12 +61,10 @@ angular.module('mathApp',[])
     url: '/scores'
   })
   .then(function(resp){
-    console.log(resp.data)
     $scope.scoresBasic60 = filterMode(resp.data, 'basic60');
     $scope.scoresBasic30 = filterMode(resp.data, 'basic30');
     $scope.scoresAdvanced60 = filterMode(resp.data, 'advanced60');
     $scope.scoresAdvanced30 = filterMode(resp.data, 'advanced30');
-    console.log($scope.scoresAdvanced30);
   });
   //Timer function
   $scope.timerStart = function() {

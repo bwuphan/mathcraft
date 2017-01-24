@@ -19,9 +19,12 @@ module.exports = {
           console.log('highscore ', highscore)
           var newUser = new User({
             username: username,
-            highscore: highscore,
-            mode: mode
+            basic30: null,
+            basic60: null,
+            advanced30: null,
+            advanced60: null
           });
+          newUser[mode] = highscore;
           newUser.save(function(err, newUser) {
             if(err) {
               console.log('error here');
@@ -29,9 +32,23 @@ module.exports = {
             }
           });
         } else {
-          if(user.highscore < highscore) {
-            user.highscore = highscore;
+          console.log(JSON.stringify(user))
+          if(user[mode]){
+            console.log('nested user ' + user[mode] + " highscore " + highscore);
+            if(highscore > user[mode]){
+              console.log('nested ' + user[mode] + " " + highscore)
+              user[mode] = highscore;
+            }
+          } else {
+            user[mode] = highscore;
+            console.log('else user mode is ' + user[mode])
           }
+          user.save(function(err, newUser) {
+            if(err) {
+              console.log('error here');
+              res.status(500).send(err);
+            }
+          });
         }
       });
   },
