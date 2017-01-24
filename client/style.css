@@ -8,6 +8,18 @@
   text-align: center;
 }
 
+.scoreInc {
+  position: relative;
+  text-align: center;
+  color: #6ef442;
+}
+
+.scoreDec {
+  position: relative;
+  text-align: center;
+  color: red;
+}
+
 .mathGame {
   position: relative;
   text-align: center;
@@ -18,23 +30,51 @@
   text-align: center;
 }
 
+.scoreboard {
+  position: relative;
+  top: 100px;
+}
 
 .basic60 {
   width: 10%;
-  margin-left: 20%;
+  margin-left: 55%;
 }
 
 .basic30 {
   width: 10%;
-  margin-left: 40%; /* minus the amount to make it 100% */
+  margin-left: 75%; /* minus the amount to make it 100% */
 }
 
 .advanced60 {
   width: 10%;
-  margin-left: 60%; /* minus the amount to make it 100% */
+  margin-left: 15%; /* minus the amount to make it 100% */
 }
 
 .advanced30 {
   width: 10%;
-  margin-left: 80%; /* minus the amount to make it 100% */
+  margin-left: 35%; /* minus the amount to make it 100% */
+}
+
+.cool {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.warm {
+  position: relative;
+  text-align: center;
+  color: #f4c542;
+}
+
+.heat {
+  position: relative;
+  text-align: center;
+  color: #f44242;
+}
+
+.fuego {
+  position: relative;
+  text-align: center;
+  color: #cb42f4;
 }

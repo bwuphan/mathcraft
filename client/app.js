@@ -1,7 +1,6 @@
 angular.module('mathApp',[])
 .controller('MathController', function($scope, $location, $http, $timeout) {
   $scope.usrAnswer = '';
-  $scope.time = 60;
   $scope.score = 0;
   $scope.start = false;
   $scope.scoresBasic60;
@@ -10,6 +9,10 @@ angular.module('mathApp',[])
   $scope.scoresAdvanced30;
   $scope.username = '';
   $scope.selectedMode = 'basic60';
+  $scope.dynamicScoreClass = 'score';
+  $scope.bonusString = '';
+  $scope.dynamicBonusClass = 'cool';
+  var bonusCounter = 0;
   //modes for game
   var modes = {
     basic60: {
@@ -82,11 +85,29 @@ angular.module('mathApp',[])
   }
 
   $scope.incScore = function() {
-    $scope.score += 100;
+    bonusCounter++;
+    if(bonusCounter > 15){
+      $scope.score += 400;
+      $scope.bonusString = 'EN FUEGO!!!!!';
+      $scope.dynamicBonusClass = 'fuego';
+    } else if (bonusCounter < 15 && bonusCounter >= 10) {
+      $scope.score += 300;
+      $scope.bonusString = 'Hot damn you heating up!!!';
+      $scope.dynamicBonusClass = 'heat';
+    } else if (bonusCounter < 10 && bonusCounter >= 5) {
+      $scope.score += 200;
+      $scope.bonusString = 'Getting warm...';
+      $scope.dynamicBonusClass = 'warm';
+    } else {
+      $scope.score += 100;
+    }
+    $scope.dynamicScoreClass = 'scoreInc';
   }
 
   $scope.decScore = function() {
+    bonusCounter = 0;
     $scope.score -= 100;
+    $scope.dynamicScoreClass = 'scoreDec';
   }
 
   // Generates random operator

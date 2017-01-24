@@ -16,34 +16,15 @@
         <select ng-model="selectedMode" ng-options="mode for mode in modes"> </select>
         <button ng-disabled="entry.username.$invalid" ng-click="timerStart()">START</button>
       </form>
-      <h3 class="score" >Score : {{score}}</h1>
+      <h3 ng-class="dynamicScoreClass">Score : {{score}}</h1>
       <div class="mathGame" ng-show="start">
         <h2 class="timer">{{time}}</h2>
         <h2>{{expression}}</h2>
         <input autofocus type="text" ng-model="usrAnswer"/>
         <button ng-click="random()">submit</button>
+        <div ng-class="dynamicBonusClass">{{bonusString}}</div>
       </div>
       <div ng-show="start===false" class="scoreboard">
-        <table class="basic60">
-          <caption>Basic 60</caption>
-          <tr>
-            <th>User</th>
-            <th>Score</th>
-          </tr>
-          <tr ng-repeat="score in scoresBasic60">
-            <th>{{score.username}}</th>
-            <th>{{score.highscore}}</th>
-        </table>
-        <table class="basic30">
-          <caption>Basic 30</caption>
-          <tr>
-            <th>User</th>
-            <th>Score</th>
-          </tr>
-          <tr ng-repeat="score in scoresBasic30">
-            <th>{{score.username}}</th>
-            <th>{{score.highscore}}</th>
-        </table>
         <table class="advanced60">
           <caption>Advanced 60</caption>
           <tr>
@@ -61,6 +42,26 @@
             <th>Score</th>
           </tr>
           <tr ng-repeat="score in scoresAdvanced30">
+            <th>{{score.username}}</th>
+            <th>{{score.highscore}}</th>
+        </table>
+        <table class="basic60">
+          <caption>Basic 60</caption>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+          <tr ng-repeat="score in scoresBasic60">
+            <th>{{score.username}}</th>
+            <th>{{score.highscore}}</th>
+        </table>
+        <table class="basic30">
+          <caption>Basic 30</caption>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+          <tr ng-repeat="score in scoresBasic30">
             <th>{{score.username}}</th>
             <th>{{score.highscore}}</th>
         </table>
