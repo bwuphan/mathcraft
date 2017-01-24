@@ -13,7 +13,7 @@
       <h1>Score : {{score}}</h1>
       <div ng-show="start">
         <h2>{{expression}}</h2>
-        <input type="text" ng-model="usrAnswer"/>
+        <input autofocus type="text" ng-model="usrAnswer"/>
         <button ng-click="random()">submit</button>
         <pre>
           <h2>{{usrAnswer}}</h2>
