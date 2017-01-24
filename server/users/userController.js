@@ -6,7 +6,7 @@ var Promise = require('bluebird')
 module.exports = {
   signin: function(req, res, next) {
     console.log('body here', req.body)
-    var username = 'anonymouse';
+    var username = 'anonymous';
     if(req.body.username) {
       username = req.body.username
     }
@@ -32,5 +32,10 @@ module.exports = {
           }
         }
       });
+  },
+  getUsers: function(req, res, next) {
+    User.find({}).exec(function(err, users) {
+      res.status(200).send(users);
+    });
   }
 }

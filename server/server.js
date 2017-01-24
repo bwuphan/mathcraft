@@ -13,11 +13,15 @@ db.once('open', function() {
   console.log('we connected')
 });
 
-app.post('/', userController.signin)
+app.post('/', userController.signin);
+
+// app.get('/', userController.getUsers);
+
 // app.get('/', function(req, res) {
 //   console.log('hello')
 //   res.send('Hello world')
 // })
+
 var port = process.env.PORT || 8000;
 app.use(express.static(__dirname + '/../client'));
 app.listen(port, function() {

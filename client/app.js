@@ -4,6 +4,14 @@ angular.module('mathApp',[])
   $scope.time = 10;
   $scope.score = 0;
   $scope.start = false;
+  $scope.data = '';
+  $http({
+    method:'GET',
+    url: '/'
+  })
+  .then(function(resp){
+    $scope.data = resp.data;
+  })
   //Timer function
   $scope.timerStart = function() {
     //inner function decrements time
