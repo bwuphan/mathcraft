@@ -1,0 +1,18 @@
+<div id='container'>
+  <button ng-show="start===false" ng-click="timerStart()">START</button>
+  <h2>HELLO</h2>
+  <h1>Score : {{score}}</h1>
+  <div ng-if="start">
+    <h2>{{expression}}</h2>
+    <input type="text" ng-model="usrAnswer"/>
+    <button ng-click="random()">submit</button>
+    <pre>
+      {{usrAnswer}}
+      {{expression}}
+      {{check}}
+      {{time}}
+      {{score}}
+      {{start}}
+    </pre>
+  </div>
+</div>
