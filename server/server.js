@@ -1,10 +1,19 @@
 var express = require('express');
 var app = express();
-// var mongoose = require('mongoose');
+var mongoose = require('mongoose');
+var userController = require('./users/userController.js');
+var bodyParser = require('body-parser');
+app.use(bodyParser());
 
-// mongoose.connect('mongodb://localhost/mathcraft')
+mongoose.connect('mongodb://localhost/mathcraft')
 
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('we connected')
+});
 
+app.post('/', userController.signin)
 // app.get('/', function(req, res) {
 //   console.log('hello')
 //   res.send('Hello world')

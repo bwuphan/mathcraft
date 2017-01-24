@@ -1,7 +1,7 @@
 angular.module('mathApp',[])
-.controller('MathController', function($scope, $location, $timeout) {
+.controller('MathController', function($scope, $location, $http, $timeout) {
   $scope.usrAnswer = '';
-  $scope.time = 60;
+  $scope.time = 10;
   $scope.score = 0;
   $scope.start = false;
   //Timer function
@@ -11,6 +11,12 @@ angular.module('mathApp',[])
       $scope.time--;
       if($scope.time < 1) {
         $scope.start = false;
+        $http({
+          method: 'POST',
+          url: '/',
+          data: JSON.stringify({highscore: $scope.score})
+        })
+        return;
       }
       $timeout(decTime, 1000);
     }
