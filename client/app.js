@@ -14,12 +14,12 @@ angular.module('mathApp',[])
 
   //initialized random expression
   $scope.expression = `${Math.floor(Math.random() * 12)} ${$scope.randomOp()} ${Math.floor(Math.random() * 12)}`
-
+  $scope.check = true
   //Generates random expresssion
   $scope.random = function() {
     console.log($scope.answer)
     console.log(eval($scope.expression));
-    $scope.answer == eval($scope.expression) ? $scope.response = 'true': $scope.response = 'false'
+    $scope.usrAnswer == eval($scope.expression) ? $scope.check = 'true': $scope.check = 'false'
     $scope.expression = `${Math.floor(Math.random() * 12)} ${$scope.randomOp()} ${Math.floor(Math.random() * 12)}`
     $scope.answer = '';
   }
