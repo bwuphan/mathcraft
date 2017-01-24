@@ -1,12 +1,14 @@
 angular.module('mathApp',[])
 .controller('MathController', function($scope, $location, $http, $timeout) {
   $scope.usrAnswer = '';
-  $scope.time = 60;
+  $scope.time = 10;
   $scope.score = 0;
   $scope.start = false;
   $scope.data = '';
+  $scope.username = '';
 
   var ajaxRequests = function() {
+    console.log($scope.username)
     $http({
       method: 'POST',
       url: '/',
@@ -50,7 +52,7 @@ angular.module('mathApp',[])
         $http({
           method: 'POST',
           url: '/',
-          data: JSON.stringify({highscore: $scope.score})
+          data: JSON.stringify({username: $scope.username, highscore: $scope.score})
         })
         return;
       }
