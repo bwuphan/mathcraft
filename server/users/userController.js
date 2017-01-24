@@ -7,10 +7,11 @@ module.exports = {
   signin: function(req, res, next) {
     console.log('body here', req.body)
     var username = 'anonymous';
+    var highscore = req.body.highscore;
+    var mode = req.body.mode;
     if(req.body.username) {
       username = req.body.username
     }
-    var highscore = req.body.highscore;
     User.findOne({username: username})
       .exec(function(err, user) {
         if(!user) {
@@ -18,7 +19,8 @@ module.exports = {
           console.log('highscore ', highscore)
           var newUser = new User({
             username: username,
-            highscore: highscore
+            highscore: highscore,
+            mode: mode
           });
           newUser.save(function(err, newUser) {
             if(err) {

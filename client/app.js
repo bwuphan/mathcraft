@@ -4,11 +4,10 @@ angular.module('mathApp',[])
   $scope.time = 60;
   $scope.score = 0;
   $scope.start = false;
-  $scope.data1;
-  $scope.data2;
+  $scope.scoresListOne;
+  $scope.scoresListTwo;
   $scope.username = '';
   $scope.selectedMode = '';
-
   //modes for game
   var modes = {
     one: {
@@ -21,21 +20,28 @@ angular.module('mathApp',[])
 
   $scope.modes = ['one', 'two'];
 
+  //This function filters the data by mode and sorts by high score
+  var filterMode = function(data, modeString) {
+    return data.sort(function(a, b){
+      return parseFloat(b.highscore) - parseFloat(a.highscore);
+    }).filter(function(entry) {
+      console.log(entry)
+      if(entry.mode === modeString){
+        return entry;
+      }
+    }).map(function(entry) {
+      return {highscore : entry.highscore, username : entry.username};
+    });
+  }
 
   $http({
     method:'GET',
     url: '/scores'
   })
   .then(function(resp){
-    $scope.data1 = resp.data.sort(function(a, b){
-      return parseFloat(b.highscore) - parseFloat(a.highscore);
-    }).filter(function(entry) {
-      if(entry.mode === 'one'){
-        return entry;
-      }
-    }).map(function(entry) {
-      return {highscore : entry.highscore, username : entry.username};
-    });
+    $scope.scoresListOne = filterMode(resp.data, 'one');
+    $scope.scoresListTwo = filterMode(resp.data, 'two');
+    console.log($scope.data1)
 
   });
 
