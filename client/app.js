@@ -1,18 +1,23 @@
 angular.module('mathApp',[])
 .controller('MathController', function($scope, $location, $timeout) {
   $scope.usrAnswer = '';
-  $scope.time = 10;
+  $scope.time = 60;
   $scope.score = 0;
   $scope.start = false;
   //Timer function
   $scope.timerStart = function() {
-    if($scope.time !== 0){
-      $scope.start = $scope.start || true;
+    //inner function decrements time
+    var decTime = function() {
       $scope.time--;
-      $timeout($scope.timerStart, 1000);
-    } else {
-      $scope.start = false;
+      if($scope.time < 1) {
+        $scope.start = false;
+      }
+      $timeout(decTime, 1000);
     }
+    $scope.start = true;
+    console.log($scope.start);
+    $scope.score = 0;
+    decTime();
   }
 
   $scope.incScore = function() {
@@ -42,7 +47,7 @@ angular.module('mathApp',[])
     $scope.usrAnswer == eval($scope.expression) ? $scope.check = true : $scope.check = false;
     $scope.check === true ? $scope.incScore() : $scope.decScore();
     $scope.expression = `${Math.floor(Math.random() * 12)} ${$scope.randomOp()} ${Math.floor(Math.random() * 12)}`
-    $scope.answer = '';
+    $scope.usrAnswer = '';
   }
 
 

@@ -9,18 +9,21 @@
   <body ng-app="mathApp">
     <h1>MathCraft</h1>
     <div ng-controller="MathController">
-      <button ng-click="timerStart()">START</button>
-      <h2>{{expression}}</h2>
-      <input type="text" ng-model="usrAnswer"/>
-      <button ng-click="random()">submit</button>
-      <pre>
-        {{usrAnswer}}
-        {{expression}}
-        {{check}}
-        {{time}}
-        {{score}}
-        {{start}}
-      </pre>
+      <button ng-show="start===false" ng-click="timerStart()">START</button>
+      <h1>Score : {{score}}</h1>
+      <div ng-show="start">
+        <h2>{{expression}}</h2>
+        <input type="text" ng-model="usrAnswer"/>
+        <button ng-click="random()">submit</button>
+        <pre>
+          <h2>{{usrAnswer}}</h2>
+          {{expression}}
+          {{check}}
+          {{time}}
+          {{score}}
+          {{start}}
+        </pre>
+      </div>
     </div>
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
 <!--     LOAD IN FILE HERE -->
