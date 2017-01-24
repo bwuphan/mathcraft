@@ -24,10 +24,46 @@
       </div>
       <div ng-show="start===false" class="scoreboard">
         <h4>SCOREBOARD</h4>
-        <h7 class="scoreHeader">60 Seconds</h7>
-          <div ng-repeat="score in scoresListOne">{{score.username}}   <span align="center">{{score.highscore}}</span></div>
-        <h7 class="scoreHeader">30 Seconds</h7>
-          <div ng-repeat="score in scoresListTwo">{{score.username}}   <span align="center">{{score.highscore}}</span></div>
+        <h7>Basic 60</h7>
+        <table>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+          <tr ng-repeat="score in scoresBasic60">
+            <th>{{score.username}}</th>
+            <th>{{score.highscore}}</th>
+        </table>
+        <h7>Basic 30</h7>
+        <table>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+          <tr ng-repeat="score in scoresBasic30">
+            <th>{{score.username}}</th>
+            <th>{{score.highscore}}</th>
+        </table>
+        <table>
+        <h7>Advanced 60</h7>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+          <tr ng-repeat="score in scoresAdvanced60">
+            <th>{{score.username}}</th>
+            <th>{{score.highscore}}</th>
+        </table>
+        <h7>Advanced 30</h7>
+        <table>
+          <tr>
+            <th>User</th>
+            <th>Score</th>
+          </tr>
+          <tr ng-repeat="score in scoresAdvanced60">
+            <th>{{score.username}}</th>
+            <th>{{score.highscore}}</th>
+        </table>
       </div>
     </div>
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
