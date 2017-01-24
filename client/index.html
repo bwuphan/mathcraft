@@ -11,20 +11,12 @@
     <div ng-controller="MathController">
       <button ng-show="start===false" ng-click="timerStart()">START</button>
       <h1>Score : {{score}}</h1>
-<<<<<<< HEAD
       <div ng-show="start">
-=======
-      <div ng-if="start">
->>>>>>> 38e6006d7a65df5ff476aea2bd834bfbdab86c4a
         <h2>{{expression}}</h2>
         <input type="text" ng-model="usrAnswer"/>
         <button ng-click="random()">submit</button>
         <pre>
-<<<<<<< HEAD
           <h2>{{usrAnswer}}</h2>
-=======
-          {{usrAnswer}}
->>>>>>> 38e6006d7a65df5ff476aea2bd834bfbdab86c4a
           {{expression}}
           {{check}}
           {{time}}

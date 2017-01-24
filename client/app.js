@@ -4,7 +4,6 @@ angular.module('mathApp',[])
   $scope.time = 60;
   $scope.score = 0;
   $scope.start = false;
-
   //Timer function
   $scope.timerStart = function() {
     //inner function decrements time
@@ -12,11 +11,6 @@ angular.module('mathApp',[])
       $scope.time--;
       if($scope.time < 1) {
         $scope.start = false;
-<<<<<<< HEAD
-=======
-        console.log('in here');
-        $location.path('/#/');
->>>>>>> 38e6006d7a65df5ff476aea2bd834bfbdab86c4a
       }
       $timeout(decTime, 1000);
     }
@@ -25,8 +19,6 @@ angular.module('mathApp',[])
     $scope.score = 0;
     decTime();
   }
-
-  //have another sectio
 
   $scope.incScore = function() {
     $scope.score += 100;
@@ -51,6 +43,7 @@ angular.module('mathApp',[])
   $scope.check = true
   //Generates random expresssion
   $scope.random = function() {
+    console.log('in here')
     $scope.usrAnswer == eval($scope.expression) ? $scope.check = true : $scope.check = false;
     $scope.check === true ? $scope.incScore() : $scope.decScore();
     $scope.expression = `${Math.floor(Math.random() * 12)} ${$scope.randomOp()} ${Math.floor(Math.random() * 12)}`
