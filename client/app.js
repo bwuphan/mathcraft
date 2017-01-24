@@ -10,7 +10,7 @@ angular.module('mathApp',[])
     $http({
       method: 'POST',
       url: '/',
-      data: JSON.stringify({highscore: $scope.score})
+      data: JSON.stringify({username: $scope.username, highscore: $scope.score})
     })
     .then(function(){
       $http({
