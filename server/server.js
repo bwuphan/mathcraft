@@ -8,8 +8,10 @@ var uri = ''
 
 var port = process.env.PORT || 8000;
 console.log('process env' + process.env.PORT);
+
+//This is for determining if we are on heroku or local. If heroku use heroku uri for mongo, else use local host
 process.env.PORT ? uri = 'mongodb://heroku_x47wsjz1:r76ua1mhvk2d4s9h77n8b3tkts@ds129469.mlab.com:29469/heroku_x47wsjz1' : uri = 'mongodb://localhost/mathcraft';
-//mongod uri mongodb://heroku_x47wsjz1:r76ua1mhvk2d4s9h77n8b3tkts@ds129469.mlab.com:29469/heroku_x47wsjz1
+
 
 mongoose.connect(uri)
 
@@ -23,10 +25,6 @@ app.post('/', userController.signin);
 
 app.get('/scores', userController.getUsers);
 
-// app.get('/', function(req, res) {
-//   console.log('hello')
-//   res.send('Hello world')
-// })
 
 app.use(express.static(__dirname + '/../client'));
 app.listen(port, function() {

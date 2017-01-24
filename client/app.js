@@ -1,7 +1,7 @@
 angular.module('mathApp',[])
 .controller('MathController', function($scope, $location, $http, $timeout) {
   $scope.usrAnswer = '';
-  $scope.time = 10;
+  $scope.time = 60;
   $scope.score = 0;
   $scope.start = false;
   $scope.data = '';
