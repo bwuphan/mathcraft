@@ -1,0 +1,40 @@
+.title {
+  font-family: helvetica;
+  position: relative;
+  text-align: center;
+}
+.score {
+  position: relative;
+  text-align: center;
+}
+
+.mathGame {
+  position: relative;
+  text-align: center;
+}
+
+.form {
+  position: relative;
+  text-align: center;
+}
+
+
+.basic60 {
+  width: 10%;
+  margin-left: 20%;
+}
+
+.basic30 {
+  width: 10%;
+  margin-left: 40%; /* minus the amount to make it 100% */
+}
+
+.advanced60 {
+  width: 10%;
+  margin-left: 60%; /* minus the amount to make it 100% */
+}
+
+.advanced30 {
+  width: 10%;
+  margin-left: 80%; /* minus the amount to make it 100% */
+}

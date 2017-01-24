@@ -56,7 +56,7 @@ angular.module('mathApp',[])
     $scope.scoresBasic30 = filterMode(resp.data, 'basic30');
     $scope.scoresAdvanced60 = filterMode(resp.data, 'advanced60');
     $scope.scoresAdvanced30 = filterMode(resp.data, 'advanced30');
-    console.log($scope.scoresBasic60)
+    console.log($scope.scoresAdvanced30);
   });
   //Timer function
   $scope.timerStart = function() {
