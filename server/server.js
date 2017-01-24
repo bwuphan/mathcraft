@@ -7,6 +7,7 @@ app.use(bodyParser());
 var uri = ''
 
 var port = process.env.PORT || 8000;
+console.log('process env' + process.env.PORT);
 process.env.PORT ? uri = 'mongodb://heroku_x47wsjz1:r76ua1mhvk2d4s9h77n8b3tkts@ds129469.mlab.com:29469/heroku_x47wsjz1' : uri = 'mongodb://localhost/mathcraft';
 //mongod uri mongodb://heroku_x47wsjz1:r76ua1mhvk2d4s9h77n8b3tkts@ds129469.mlab.com:29469/heroku_x47wsjz1
 
