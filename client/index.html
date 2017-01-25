@@ -11,7 +11,6 @@
     <h1 class="title">MathCraft</h1>
     <div class="controller" ng-controller="MathController">
       <form class="form" ng-show="start===false" name="entry">
-        <div ng-show="entry.username.$error.required">Please Enter Name</div>
         <input name="username" placeholder="Enter Name Here" ng-model="username" " required/>
         <select ng-model="selectedMode" ng-options="mode for mode in modes"> </select>
         <button ng-disabled="entry.username.$invalid" ng-click="timerStart()">START</button>
