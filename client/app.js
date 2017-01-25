@@ -3,10 +3,7 @@ angular.module('mathApp',[])
   $scope.usrAnswer = '';
   $scope.score = 0;
   $scope.start = false;
-  $scope.scoresBasic60;
-  $scope.scoresBasic30;
-  $scope.scoresAdvanced60;
-  $scope.scoresAdvanced30;
+  $scope.scoresBasic60, $scope.scoresBasic30, $scope.scoresAdvanced60, $scope.scoresAdvanced30
   $scope.username = '';
   $scope.selectedMode = 'basic60';
   $scope.dynamicScoreClass = 'score';
@@ -35,12 +32,16 @@ angular.module('mathApp',[])
 
   $scope.modes = ['basic60', 'basic30', 'advanced60', 'advanced30'];
 
+  //reset a few scope variables
+  var resetSomeScopes = function(){
+    $scope.dynamicScoreClass = 'scoreDec';
+    $scope.bonusString = '';
+    $scope.dynamicBonusClass = 'cool';
+  };
+
   //This function filters the data by mode and sorts by high score
   var filterMode = function(data, modeString) {
     return data.map(function(entry) {
-      if(entry.username === 'billG'){
-        console.log(JSON.stringify(entry))
-      }
       return {username: entry.username, highscore: entry[modeString]};
     }).filter(function(entry) {
       if(entry.highscore){
@@ -61,6 +62,7 @@ angular.module('mathApp',[])
     $scope.scoresAdvanced60 = filterMode(resp.data, 'advanced60');
     $scope.scoresAdvanced30 = filterMode(resp.data, 'advanced30');
   });
+
   //Timer function
   $scope.timerStart = function() {
     $scope.time = modes[$scope.selectedMode].time;
@@ -69,9 +71,7 @@ angular.module('mathApp',[])
       $scope.time--;
       if($scope.time < 1) {
         $scope.start = false;
-        $scope.dynamicScoreClass = 'score';
-        $scope.bonusString = '';
-        $scope.dynamicBonusClass = 'cool';
+        resetSomeScopes();
         $http({
           method: 'POST',
           url: '/',
@@ -85,6 +85,13 @@ angular.module('mathApp',[])
 
     $scope.score = 0;
     decTime();
+  }
+
+  $scope.resetSameMode = function() {
+    $scope.time = modes[$scope.selectedMode].time + 1;
+    $scope.score = 0;
+    resetSomeScopes();
+    $scope.expression = `${Math.floor(Math.random() * 12)} ${$scope.randomOp(modes[$scope.selectedMode].difficulty)} ${Math.floor(Math.random() * 12)}`
   }
 
   $scope.incScore = function() {

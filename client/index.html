@@ -18,6 +18,7 @@
       </form>
       <h3 ng-class="dynamicScoreClass">Score : {{score}}</h1>
       <div class="mathGame" ng-show="start">
+        <button ng-show="start" ng-click="resetSameMode()">Reset</button>
         <h2 class="timer">{{time}}</h2>
         <h2>{{expression}}</h2>
         <form ng-submit="random()">
