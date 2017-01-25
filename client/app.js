@@ -34,6 +34,7 @@ angular.module('mathApp',[])
 
   //reset a few scope variables
   var resetSomeScopes = function(){
+    bonusCounter = 0;
     $scope.dynamicScoreClass = 'scoreDec';
     $scope.bonusString = '';
     $scope.dynamicBonusClass = 'cool';
@@ -153,27 +154,5 @@ angular.module('mathApp',[])
     $scope.expression = `${Math.floor(Math.random() * 12)} ${$scope.randomOp(modes[$scope.selectedMode].difficulty)} ${Math.floor(Math.random() * 12)}`
     $scope.usrAnswer = '';
   }
-
-  // var ajaxRequests = function() {
-  //   console.log($scope.username)
-  //   $http({
-  //     method: 'POST',
-  //     url: '/',
-  //     data: JSON.stringify({username: $scope.username, highscore: $scope.score})
-  //   })
-  //   .then(function(){
-  //     $http({
-  //       method:'GET',
-  //       url: '/scores'
-  //     })
-  //     .then(function(resp){
-  //       $scope.data = resp.data.sort(function(a, b){
-  //         return parseFloat(b.highscore) - parseFloat(a.highscore);
-  //       }).map(function(object) {
-  //         return {highscore : object.highscore, username : object.username};
-  //       })
-  //     })
-  //   })
-  // };
 
 });
