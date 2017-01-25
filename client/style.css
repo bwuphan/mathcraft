@@ -38,22 +38,34 @@
 
 .basic60 {
   width: 10%;
-  margin-left: 55%;
+  margin-left: 20px;
+  display: inline;
+  padding: 165px
 }
 
 .basic30 {
   width: 10%;
-  margin-left: 75%; /* minus the amount to make it 100% */
+  margin-left: 20px; /* minus the amount to make it 100% */
+  display: inline;
+  padding: 165px
+}
+
+th {
+  padding-right: 10px;
 }
 
 .advanced60 {
   width: 10%;
-  margin-left: 15%; /* minus the amount to make it 100% */
+  margin-left: 20px; /* minus the amount to make it 100% */
+  display: inline;
+  padding: 165px
 }
 
 .advanced30 {
   width: 10%;
-  margin-left: 35%; /* minus the amount to make it 100% */
+  margin-left: 20px; /* minus the amount to make it 100% */
+  display: inline;
+  padding: 165px
 }
 
 .cool {
