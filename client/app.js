@@ -33,7 +33,7 @@ angular.module('mathApp',[])
     }
   }
 
-  $scope.modes = ['basic 60', 'basic 30', 'advanced 60', 'advanced 30'];
+  $scope.modes = ['basic60', 'basic30', 'advanced60', 'advanced30'];
 
   //This function filters the data by mode and sorts by high score
   var filterMode = function(data, modeString) {
