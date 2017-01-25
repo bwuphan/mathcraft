@@ -2,6 +2,7 @@
   font-family: helvetica;
   position: relative;
   text-align: center;
+  font-size: 400%;
 }
 .score {
   position: relative;
@@ -77,4 +78,10 @@
   position: relative;
   text-align: center;
   color: #cb42f4;
+}
+
+.bonusString {
+  position: relative;
+  top: 100px;
+  font-size: 200%;
 }

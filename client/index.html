@@ -23,8 +23,7 @@
         <form ng-submit="random()">
           <input autofocus ng-focus="start===true" type="text" ng-model="usrAnswer"/>
         </form>
-        <!-- <button ng-click="random()">submit</button> -->
-        <div ng-class="dynamicBonusClass">{{bonusString}}</div>
+        <div class="bonusString" ng-class="dynamicBonusClass">{{bonusString}}</div>
       </div>
       <div ng-show="start===false" class="scoreboard">
         <table class="advanced60">

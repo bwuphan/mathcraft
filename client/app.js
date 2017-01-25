@@ -111,6 +111,8 @@ angular.module('mathApp',[])
     bonusCounter = 0;
     $scope.score -= 100;
     $scope.dynamicScoreClass = 'scoreDec';
+    $scope.bonusString = '';
+    $scope.dynamicBonusClass = 'cool';
   }
 
   // Generates random operator
