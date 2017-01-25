@@ -69,6 +69,9 @@ angular.module('mathApp',[])
       $scope.time--;
       if($scope.time < 1) {
         $scope.start = false;
+        $scope.dynamicScoreClass = 'score';
+        $scope.bonusString = '';
+        $scope.dynamicBonusClass = 'cool';
         $http({
           method: 'POST',
           url: '/',

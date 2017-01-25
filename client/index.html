@@ -20,8 +20,10 @@
       <div class="mathGame" ng-show="start">
         <h2 class="timer">{{time}}</h2>
         <h2>{{expression}}</h2>
-        <input autofocus type="text" ng-model="usrAnswer"/>
-        <button ng-click="random()">submit</button>
+        <form ng-submit="random()">
+          <input autofocus ng-focus="start===true" type="text" ng-model="usrAnswer"/>
+        </form>
+        <!-- <button ng-click="random()">submit</button> -->
         <div ng-class="dynamicBonusClass">{{bonusString}}</div>
       </div>
       <div ng-show="start===false" class="scoreboard">
