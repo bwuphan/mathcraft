@@ -33,7 +33,7 @@
 
 .scoreboard {
   position: relative;
-  top: 100px;
+  top: 50px;
 }
 
 .basic60 {
@@ -84,4 +84,8 @@
   position: relative;
   top: 100px;
   font-size: 200%;
+}
+
+caption {
+  text-decoration: underline;
 }
