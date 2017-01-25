@@ -42,7 +42,7 @@ angular.module('mathApp',[])
 
   //This function filters the data by mode and sorts by high score
   var filterMode = function(data, modeString) {
-    var filteredScore = data.map(function(entry) {
+    return data.map(function(entry) {
       return {username: entry.username, highscore: entry[modeString]};
     }).filter(function(entry) {
       if(entry.highscore){
@@ -51,10 +51,6 @@ angular.module('mathApp',[])
     }).sort(function(a, b){
       return parseFloat(b.highscore) - parseFloat(a.highscore);
     });
-    if(filteredScore.length > 15) {
-      return filteredScore.splice(15, filteredScore.length - 15);
-    }
-    return filteredScore;
   }
 
   $http({
