@@ -32,7 +32,6 @@ angular.module('mathApp',[])
   }
 
   $scope.modes = ['basic60', 'basic30', 'advanced60', 'advanced30'];
-  $scope.time = modes[$scope.selectedMode].time;
 
   //reset a few scope variables
   var resetSomeScopes = function(){
@@ -68,12 +67,13 @@ angular.module('mathApp',[])
 
   //Timer function
   $scope.timerStart = function() {
+    $scope.time = modes[$scope.selectedMode].time;
     //inner function decrements time
     var decTime = function() {
+      $scope.time--;
       if($scope.time === modes[$scope.selectedMode].time){
         $scope.dynamicExpressionClass = 'visibleExpression';
       }
-      $scope.time--;
       if($scope.time < 1) {
         $scope.start = false;
         resetSomeScopes();
@@ -104,20 +104,23 @@ angular.module('mathApp',[])
     bonusCounter++;
     if(bonusCounter > 15){
       $scope.score += 400;
-      $scope.bonusString = 'EN FUEGO!!!!!';
-      $scope.dynamicBonusClass = 'fuego';
+      $scope.dynamicScoreClass = 'score4';
+      // $scope.bonusString = 'EN FUEGO!!!!!';
+      // $scope.dynamicBonusClass = 'fuego';
     } else if (bonusCounter < 15 && bonusCounter >= 10) {
       $scope.score += 300;
-      $scope.bonusString = 'Hot damn you heating up!!!';
-      $scope.dynamicBonusClass = 'heat';
+      $scope.dynamicScoreClass = 'score3';
+      // $scope.bonusString = 'Hot damn you heating up!!!';
+      // $scope.dynamicBonusClass = 'heat';
     } else if (bonusCounter < 10 && bonusCounter >= 5) {
       $scope.score += 200;
-      $scope.bonusString = 'Getting warm...';
-      $scope.dynamicBonusClass = 'warm';
+      $scope.dynamicScoreClass = 'score2';
+      // $scope.bonusString = 'Getting warm...';
+      // $scope.dynamicBonusClass = 'warm';
     } else {
       $scope.score += 100;
+      $scope.dynamicScoreClass = 'score1';
     }
-    $scope.dynamicScoreClass = 'scoreInc';
   }
 
   $scope.decScore = function() {

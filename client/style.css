@@ -13,12 +13,6 @@
   text-align: center;
 }
 
-.scoreInc {
-  position: relative;
-  text-align: center;
-  color: #6ef442;
-}
-
 .scoreDec {
   position: relative;
   text-align: center;
@@ -36,6 +30,30 @@
 
 .hiddenExpression {
   color: white;
+}
+
+.score1{
+  position: relative;
+  text-align: center;
+  color: #ffcc66;
+}
+
+.score2{
+  position: relative;
+  text-align: center;
+  color: #33cc33;
+}
+
+.score3{
+  position: relative;
+  text-align: center;
+  color: #33ccff;
+}
+
+.score4{
+  position: relative;
+  text-align: center;
+  color: #cc33ff;
 }
 
 .form {
@@ -90,7 +108,7 @@ th {
   color: white;
 }
 
-.warm {
+/*.warm {
   position: relative;
   text-align: center;
   color: #f4c542;
@@ -107,7 +125,7 @@ th {
   text-align: center;
   color: #cb42f4;
 }
-
+*/
 .bonusString {
   position: relative;
   top: 100px;
