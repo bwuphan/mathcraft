@@ -50,7 +50,7 @@ angular.module('mathApp',[])
       }
     }).sort(function(a, b){
       return parseFloat(b.highscore) - parseFloat(a.highscore);
-    });
+    }).slice(0, 10);
   }
 
   $http({
