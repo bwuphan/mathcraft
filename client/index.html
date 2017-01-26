@@ -20,7 +20,7 @@
       <div class="mathGame" ng-show="start">
         <button ng-show="start" ng-click="resetSameMode()">Reset</button>
         <h2 class="timer">{{time}}</h2>
-        <h2>{{expression}}</h2>
+        <h2 ng-class="dynamicExpressionClass">{{expression}}</h2>
         <form ng-submit="random()">
           <input autofocus ng-focus="start===true" type="text" ng-model="usrAnswer"/>
         </form>

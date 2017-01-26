@@ -9,6 +9,7 @@ angular.module('mathApp',[])
   $scope.dynamicScoreClass = 'score';
   $scope.bonusString = '';
   $scope.dynamicBonusClass = 'cool';
+  $scope.dynamicExpressionClass = 'visibleExpression';
   var bonusCounter = 0;
   //modes for game
   var modes = {
@@ -31,6 +32,7 @@ angular.module('mathApp',[])
   }
 
   $scope.modes = ['basic60', 'basic30', 'advanced60', 'advanced30'];
+  $scope.time = modes[$scope.selectedMode].time;
 
   //reset a few scope variables
   var resetSomeScopes = function(){
@@ -66,9 +68,11 @@ angular.module('mathApp',[])
 
   //Timer function
   $scope.timerStart = function() {
-    $scope.time = modes[$scope.selectedMode].time;
     //inner function decrements time
     var decTime = function() {
+      if($scope.time === modes[$scope.selectedMode].time){
+        $scope.dynamicExpressionClass = 'visibleExpression';
+      }
       $scope.time--;
       if($scope.time < 1) {
         $scope.start = false;
@@ -89,7 +93,8 @@ angular.module('mathApp',[])
   }
 
   $scope.resetSameMode = function() {
-    $scope.time = modes[$scope.selectedMode].time + 1;
+    $scope.dynamicExpressionClass = 'hiddenExpression';
+    $scope.time = modes[$scope.selectedMode].time + 3;
     $scope.score = 0;
     resetSomeScopes();
     $scope.expression = `${Math.floor(Math.random() * 12)} ${$scope.randomOp(modes[$scope.selectedMode].difficulty)} ${Math.floor(Math.random() * 12)}`
