@@ -5,7 +5,7 @@ angular.module('mathApp',[])
   $scope.start = false;
   $scope.scoresBasic60, $scope.scoresBasic30, $scope.scoresAdvanced60, $scope.scoresAdvanced30
   $scope.username = '';
-  $scope.selectedMode = 'Basic 60';
+  $scope.selectedMode = 'basic60';
   $scope.dynamicScoreClass = 'score';
   $scope.bonusString = '';
   $scope.dynamicBonusClass = 'cool';
@@ -31,7 +31,7 @@ angular.module('mathApp',[])
     }
   }
 
-  $scope.modes = ['Basic 60', 'Basic 30', 'Advanced 60', 'Advanced 30'];
+  $scope.modes = ['basic60', 'basic30', 'advanced60', 'advanced30'];
   $scope.time = modes[$scope.selectedMode].time;
 
   //reset a few scope variables
