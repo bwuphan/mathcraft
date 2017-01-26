@@ -35,7 +35,7 @@ module.exports = {
           console.log(JSON.stringify(user))
           if(user[mode]){
             console.log('nested user ' + user[mode] + " highscore " + highscore);
-            if(highscore < user[mode]){
+            if(highscore > user[mode]){
               console.log('nested ' + user[mode] + " " + highscore)
               user[mode] = highscore;
             }
