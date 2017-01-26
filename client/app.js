@@ -31,7 +31,7 @@ angular.module('mathApp',[])
     }
   }
 
-  $scope.modes = ['basic60', 'basic30', 'advanced60', 'advanced30'];
+  $scope.modes = ['Basic 60', 'Basic 30', 'Advanced 60', 'Advanced 30'];
   $scope.time = modes[$scope.selectedMode].time;
 
   //reset a few scope variables
