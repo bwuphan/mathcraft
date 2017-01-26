@@ -5,7 +5,7 @@ angular.module('mathApp',[])
   $scope.start = false;
   $scope.scoresBasic60, $scope.scoresBasic30, $scope.scoresAdvanced60, $scope.scoresAdvanced30
   $scope.username = '';
-  $scope.selectedMode = 'basic60';
+  $scope.selectedMode = 'Basic 60';
   $scope.dynamicScoreClass = 'score';
   $scope.bonusString = '';
   $scope.dynamicBonusClass = 'cool';
