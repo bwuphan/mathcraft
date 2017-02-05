@@ -1,12 +1,10 @@
 var User = require('./userModel');
 var bodyParser = require('body-parser');
-var Promise = require('bluebird')
 
 
 module.exports = {
   signin: function(req, res, next) {
     console.log('body here', req.body)
-    var username = 'anonymous';
     var highscore = req.body.highscore;
     var mode = req.body.mode;
     if(req.body.username) {
@@ -39,9 +37,11 @@ module.exports = {
               console.log('nested ' + user[mode] + " " + highscore)
               user[mode] = highscore;
             }
+            res.status(201).send('Posted');
           } else {
             user[mode] = highscore;
             console.log('else user mode is ' + user[mode])
+            res.status(201).send('Posted');
           }
           user.save(function(err, newUser) {
             if(err) {

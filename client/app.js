@@ -154,6 +154,7 @@ angular.module('mathApp',[])
   //initialized random expression
   $scope.expression = `${Math.floor(Math.random() * 12)} ${$scope.randomOp(modes[$scope.selectedMode].difficulty)} ${Math.floor(Math.random() * 12)}`
   $scope.check = true
+
   //Generates random expresssion
   $scope.random = function() {
     console.log('usrAnswer : ' + $scope.usrAnswer + ' x '  + eval($scope.expression));

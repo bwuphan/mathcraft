@@ -1,6 +1,7 @@
 .author {
   position: relative;
   text-align: center;
+  bottom: 15px;
 }
 .title {
   font-family: helvetica;
