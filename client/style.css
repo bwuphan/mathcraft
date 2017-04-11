@@ -75,7 +75,7 @@ th {
   width: 10%;
   margin-left: 20px;
   display: inline;
-  padding: 80px;
+  padding: 70px;
   position: static;
 }
 
@@ -83,23 +83,23 @@ th {
   width: 10%;
   margin-left: 20px; /* minus the amount to make it 100% */
   display: inline;
-  padding: 80px;
+  padding: 70px;
   position: static;
 }
 
 .advanced60 {
   width: 10%;
-  margin-left: 20px; /* minus the amount to make it 80% */
+  margin-left: 20px; /* minus the amount to make it 70% */
   display: inline;
-  padding: 80px;
+  padding: 70px;
   position: static;
 }
 
 .advanced30 {
   width: 10%;
-  margin-left: 20px; /* minus the amount to make it 80% */
+  margin-left: 20px; /* minus the amount to make it 70% */
   display: inline;
-  padding: 80px;
+  padding: 70px;
   position: static;
 }
 
