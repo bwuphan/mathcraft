@@ -27,8 +27,8 @@
         </form>
         <div class="bonusString" ng-class="dynamicBonusClass">{{bonusString}}</div>
       </div>
-      <div ng-show="start===false" class="scoreboard">
-        <table class="advanced60">
+      <div ng-show="start===false" class="scoreboardContainer">
+        <table class="scoreboard">
           <caption>Advanced 60</caption>
           <tr>
             <th>User</th>
@@ -38,7 +38,7 @@
             <th>{{score.username}}</th>
             <th>{{score.highscore}}</th>
         </table>
-        <table class="advanced30">
+        <table class="scoreboard">
           <caption>Advanced 30</caption>
           <tr>
             <th>User</th>
@@ -48,7 +48,7 @@
             <th>{{score.username}}</th>
             <th>{{score.highscore}}</th>
         </table>
-        <table class="basic60">
+        <table class="scoreboard">
           <caption>Basic 60</caption>
           <tr>
             <th>User</th>
@@ -58,7 +58,7 @@
             <th>{{score.username}}</th>
             <th>{{score.highscore}}</th>
         </table>
-        <table class="basic30">
+        <table class="scoreboard">
           <caption>Basic 30</caption>
           <tr>
             <th>User</th>

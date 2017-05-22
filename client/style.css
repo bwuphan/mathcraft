@@ -33,6 +33,12 @@
   color: white;
 }
 
+.scoreboardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .score1{
   position: relative;
   text-align: center;
@@ -69,38 +75,6 @@
 
 th {
   padding-right: 10px;
-}
-
-.basic60 {
-  width: 10%;
-  margin-left: 20px;
-  display: inline;
-  padding: 70px;
-  position: static;
-}
-
-.basic30 {
-  width: 10%;
-  margin-left: 20px; /* minus the amount to make it 100% */
-  display: inline;
-  padding: 70px;
-  position: static;
-}
-
-.advanced60 {
-  width: 10%;
-  margin-left: 20px; /* minus the amount to make it 70% */
-  display: inline;
-  padding: 70px;
-  position: static;
-}
-
-.advanced30 {
-  width: 10%;
-  margin-left: 20px; /* minus the amount to make it 70% */
-  display: inline;
-  padding: 70px;
-  position: static;
 }
 
 .cool {
