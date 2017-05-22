@@ -112,10 +112,11 @@ caption {
   text-decoration: underline;
 }
 
-/*@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px) {
   .scoreboardContainer {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    justify-content: space-around;
   }
-}*/
+}
